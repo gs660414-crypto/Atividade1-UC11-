@@ -166,6 +166,11 @@ public class cadastroVIEW extends javax.swing.JFrame {
         ProdutosDAO produtodao = new ProdutosDAO();
 
         produtodao.cadastrarProduto(produto);
+        
+        cadastroNome.setText("");
+        cadastroValor.setText(""); //limpa
+        
+        cadastroNome.requestFocus(); //o cursor volta para o nome
 
     } catch (NumberFormatException e) {
 
@@ -176,6 +181,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
 
     }
+          
 
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
@@ -218,6 +224,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
             }
         });
     }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;

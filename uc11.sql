@@ -20,14 +20,14 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `uc11`
 --
-
--- --------------------------------------------------------
+create database produtos
+use produtos
 
 --
 -- Estrutura da tabela `produtos`
 --
 
-CREATE TABLE `produtos` (
+CREATE TABLE produtos (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nome` text DEFAULT NULL,
   `valor` int(11) DEFAULT NULL,
@@ -68,3 +68,15 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+select * from produtos;
+
+--Correção da chave primária da tabela produtos--
+
+DESCRIBE produtos;
+ 
+SHOW CREATE TABLE produtos;    
+
+alter table produtos 
+modify id bigint unsigned not null auto_increment,
+add primary key (id);
